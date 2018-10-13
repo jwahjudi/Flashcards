@@ -5,7 +5,7 @@ A flashcard app that allows user to press on flashcard for answers to a question
 
 ### App Walk-though
 
-<img src=https://imgur.com/1SArJoz width=200><br>
+<img src=https://i.imgur.com/wt3IXXw.gif width=200><br>
 
 ## Required
 - [x] Create New Project in Xcode
