@@ -1,5 +1,25 @@
 ## Flashcard
 
+## Lab 3
+
+### App Description
+`TODO://` Added next and prev button and a way to save flashcards
+
+### App Walk-though
+
+<img src="https://i.imgur.com/7DvkRc8.gif" width=200><br>
+
+`TODO://` In the User stories section below, add an `x` between the `-[ ]` like this `- [x]` for any user story you complete. (☝️ Remove this paragraph after after checking off user stories)
+
+## Required
+- [x] User can browse through multiple flashcards
+- [x] User can re-open the app and see previously created flashcards
+- [x] Push code to GitHub
+## Optional
+- [ ] User can delete a flashcard
+- [ ] User can edit existing flashcard
+- [ ] User can store multiple choice questions
+
 ## Lab 2
 
 ### App Description
