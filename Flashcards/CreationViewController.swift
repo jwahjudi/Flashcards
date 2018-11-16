@@ -2,35 +2,39 @@
 //  CreationViewController.swift
 //  Flashcards
 //
-//  Created by Jason Wahjudi on 11/10/18.
+//  Created by Jason Wahjudi on 11/11/18.
 //  Copyright © 2018 Jason Wahjudi. All rights reserved.
 //
 
 import UIKit
 
 class CreationViewController: UIViewController {
-    
-    var flashcardsController: ViewController!
 
+    var flashcardsController: ViewController!
+    
+    @IBOutlet weak var questionTextField: UITextField!
+    
+    @IBOutlet weak var answerTextField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
     @IBAction func didTapOnCancel(_ sender: Any) {
         dismiss(animated: true)
     }
-    @IBOutlet weak var questionTextField: UITextField!
-    
-    @IBOutlet weak var answerTextField: UITextField!
-    
     @IBAction func didTapOnDone(_ sender: Any) {
-        let Question = questionTextField.text
-        let Answer = answerTextField.text
-        flashcardsController.updateFlashcard(question: Question!, answer: Answer!)
+        let questionText = questionTextField.text
+        let answerText = answerTextField.text
+    flashcardsController.updateFlashcard(question: questionText!, answer: answerText!)
         dismiss(animated: true)
+        
+        }
+        
     }
+    
 
     /*
     // MARK: - Navigation
@@ -42,4 +46,3 @@ class CreationViewController: UIViewController {
     }
     */
 
-}

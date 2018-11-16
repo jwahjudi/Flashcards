@@ -45,12 +45,30 @@
                                 </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1OA-bI-OOJ">
-                                <rect key="frame" x="172" y="406" width="69" height="57"/>
+                                <rect key="frame" x="153" y="586" width="69" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="37"/>
                                 <state key="normal" title="+"/>
                                 <connections>
-                                    <segue destination="dIP-vS-4C4" kind="show" id="qFi-qi-GHg"/>
+                                    <segue destination="Ufb-tH-l7A" kind="show" id="62p-lo-zxa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hEV-St-jJR">
+                                <rect key="frame" x="14" y="592" width="50" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Prev"/>
+                                <connections>
+                                    <action selector="didTapOnPrev:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1w1-RD-ynU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uk8-sr-8bn">
+                                <rect key="frame" x="297" y="592" width="53" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="didTapOnNext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CEr-1w-IJ2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -60,6 +78,8 @@
                     <connections>
                         <outlet property="backLabel" destination="TZo-1K-wgb" id="94n-fF-qln"/>
                         <outlet property="frontLabel" destination="ydV-QF-TiE" id="6yV-C3-PaI"/>
+                        <outlet property="nextButton" destination="uk8-sr-8bn" id="1xZ-L4-G1z"/>
+                        <outlet property="prevButton" destination="hEV-St-jJR" id="EiD-Ch-ygX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -86,15 +106,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Answer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4G3-qK-8RN">
-                                <rect key="frame" x="81" y="155" width="213" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Answer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sZt-EL-MFd">
+                                <rect key="frame" x="81" y="154" width="213" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="answerTextField:" destination="hIv-zv-kcz" eventType="editingDidEnd" id="Vf7-3p-UEt"/>
-                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -103,41 +120,41 @@
                     <navigationItem key="navigationItem" id="HtH-Rw-QmE">
                         <barButtonItem key="leftBarButtonItem" title="cancel" id="jK3-DF-1Sn">
                             <connections>
-                                <action selector="didTapOnCancel:" destination="hIv-zv-kcz" id="UYE-u5-KcF"/>
+                                <action selector="didTapOnCancel:" destination="hIv-zv-kcz" id="NzS-vq-L4b"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="jBM-ZP-c4y">
                             <connections>
-                                <action selector="didTapOnDone:" destination="hIv-zv-kcz" id="Pr7-pY-PdY"/>
+                                <action selector="didTapOnDone:" destination="hIv-zv-kcz" id="VJ1-9V-OUO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="answerTextField" destination="4G3-qK-8RN" id="TzO-tf-tFT"/>
-                        <outlet property="questionTextField" destination="j7j-rI-1j5" id="wuo-Me-ur9"/>
+                        <outlet property="answerTextField" destination="sZt-EL-MFd" id="Aoi-uk-Z1n"/>
+                        <outlet property="questionTextField" destination="j7j-rI-1j5" id="uWb-XL-ueO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k3j-zW-2Tu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1727.2" y="132.68365817091455"/>
+            <point key="canvasLocation" x="2666.4000000000001" y="132.68365817091455"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="Zdk-rh-YA9">
+        <scene sceneID="c1j-nf-S1x">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dIP-vS-4C4" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ufb-tH-l7A" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wy6-tU-exQ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bTp-VA-0Ia">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="hIv-zv-kcz" kind="relationship" relationship="rootViewController" id="VMc-iq-43f"/>
+                        <segue destination="hIv-zv-kcz" kind="relationship" relationship="rootViewController" id="go7-wY-1Is"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="i4n-2l-ogF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qGQ-kH-jCf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="940" y="133"/>
+            <point key="canvasLocation" x="1727.2" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>
