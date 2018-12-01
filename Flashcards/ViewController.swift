@@ -18,6 +18,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var frontLabel: UILabel!
     @IBOutlet weak var backLabel: UILabel!
+    @IBOutlet weak var card: UIView!
     
     var flashcards = [Flashcard]()
     
@@ -46,10 +47,43 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didTapOnFlashcard(_ sender: Any) {
-        backLabel.isHidden = true
-        
+        flipFlashcard()
     }
     
+    func flipFlashcard() {
+        
+        UIView.transition(with: card, duration: 0.3, options: .transitionFlipFromRight, animations: {
+            self.backLabel.isHidden = true
+        })
+    }
+    
+    func animateCardOut1() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.card.transform = CGAffineTransform.identity.translatedBy(x: -300.0, y: 0.0)}, completion: {finished in
+                self.updateLabels()
+                self.animateCardIn1()
+        })
+    }
+    func animateCardOut2() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.card.transform = CGAffineTransform.identity.translatedBy(x: 300.0, y: 0.0)}, completion: {finished in
+                self.updateLabels()
+                self.animateCardIn2()
+        })
+    }
+    
+    func animateCardIn1() {
+        card.transform  = CGAffineTransform.identity.translatedBy(x: 300.0, y: 0.0)
+        UIView.animate(withDuration: 0.3){
+            self.card.transform = CGAffineTransform.identity
+        }
+    }
+    func animateCardIn2() {
+        card.transform  = CGAffineTransform.identity.translatedBy(x: -300.0, y: 0.0)
+        UIView.animate(withDuration: 0.3){
+            self.card.transform = CGAffineTransform.identity
+        }
+    }
     func updateFlashcard(question: String, answer: String){
         let flashcard = Flashcard(question: question, answer: answer)
         flashcards.append(flashcard)
@@ -80,14 +114,14 @@ class ViewController: UIViewController {
     
     @IBAction func didTapOnNext(_ sender: Any) {
         currentIndex = currentIndex + 1
-        updateLabels()
         updateNextPrevButton()
+        animateCardOut1()
     }
     
     @IBAction func didTapOnPrev(_ sender: Any) {
         currentIndex = currentIndex - 1
-        updateLabels()
         updateNextPrevButton()
+        animateCardOut2()
     }
     
     func updateLabels(){
